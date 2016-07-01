@@ -24,12 +24,17 @@ function imageRotator(array){
 	}, 5000);
 };
 
+function openNav() {
+    document.getElementById("Intro").style.height = "100%";
+}
 
-var main = function(){
+function closeNav() {
+    document.getElementById("Intro").style.height = "0%";
+}
+
+function typewriter(){
 	var string = "Hi there! Welcome Aboard! I am Simran Patil."
 	let i=0; 
-	var gallery = [ "louvre.jpg", "fort.jpg"];
-		
 	var refreshId = setInterval(function(){
 		var sub = substr(string,i);
 		$('#type').text(sub);
@@ -40,9 +45,12 @@ var main = function(){
     		clearInterval(refreshId);
 		}
 	},100);
-	
-	
+}
+
+var main = function(){
+	var gallery = [ "louvre.jpg", "fort.jpg"];
 	imageRotator(gallery);
+	typewriter();
 }
 
 $(document).ready(main);
