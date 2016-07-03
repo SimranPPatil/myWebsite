@@ -1,10 +1,13 @@
+body{
+  overflow-x: hidden;
+}
 .overlay-content span{
 	font-size: 3rem;
 	text-transform: uppercase;
 	color: #fff;
 }
 
-.jumbotron{ 
+#myImg{ 
   background: no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -12,7 +15,7 @@
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  opacity:0.8;
+  opacity:0.9;
   filter: alpha(opacity=50);
 }
 
@@ -31,11 +34,11 @@
 .overlay-content {
     position: relative;
     top: 25%; 
-    width: 50%; 
+    width: 55%; 
     text-align: center; 
     margin-top: 30px; 
-    left: 20%;
-    right: 20%;
+    left: 10%;
+    right: 10%;
 }
 
 .overlay a {
@@ -43,29 +46,66 @@
     text-decoration: none;
     font-size: 36px;
     color: #818181;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
+    display: block; 
+    transition: 0.3s; 
 }
 
-/* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
 }
 
-/* Position the close button (top right corner) */
 .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
-    font-size: 60px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+    font-size: 60px !important; 
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
+#introimg{
+  width: 20rem;
+  height: 22rem;
+  padding: 5%;
+  margin-left: 60%;
+  padding-bottom: 20%; 
+  background: url('paper.jpg');
+  border-radius:0;
+  align:center;
+  transform: rotate(9deg);
+  box-shadow: 3px 3px 3px #4d4d4d;
+}
+
+#introimg2{
+  width: 10rem;
+  height: 10rem;
+  margin-left: 60%;
+  border-radius:0;
+  align:center;
+  transform: rotate(-12deg);
+  margin-bottom: 30%;
+  transform: translate(80px, -150px);
+  border-radius: 100%;
+}
+
+#starters pre{
+  margin-top: 20%;
+  font-size: 18px;
+}
+.fa{
+  transform: translate(200px, 150px);
+}
+
+#ece{
+  width: 100vw;
+  height: 60%;
+}
+@media screen and (max-height: 768px) {
     .overlay a {font-size: 20px}
     .closebtn {
         font-size: 40px !important;
         top: 15px;
         right: 35px;
+    }
+    #code{
+      font-size: 3rem;
     }
 }

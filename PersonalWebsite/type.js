@@ -21,19 +21,32 @@ function imageRotator(array){
 		}
 		else
 			i=0; //reset
-	}, 5000);
+	}, 2000);
 };
 
 function openNav() {
     document.getElementById("Intro").style.height = "100%";
+    $("#ece").hide();
+	$("#code").hide();
+	$(".fa").hide();
+    document.getElementById("myImg").style.height = "0%";
+    document.getElementById("introimg2").style.height = "0%";
+    typewriter("Hello! Nice to see you again!");
 }
 
 function closeNav() {
+	$("#ece").hide();
+	$("#code").hide();
     document.getElementById("Intro").style.height = "0%";
+    document.getElementById("myImg").style.height = "0%";
+    $("#starters").show();
+	$("#ece").slideDown("slow");
+	$("#code").slideDown("slow");
+	$(".fa").show();
 }
 
-function typewriter(){
-	var string = "Hi there! Welcome Aboard! I am Simran Patil."
+function typewriter(string){
+	
 	let i=0; 
 	var refreshId = setInterval(function(){
 		var sub = substr(string,i);
@@ -44,13 +57,20 @@ function typewriter(){
 		else{
     		clearInterval(refreshId);
 		}
-	},100);
+	},120);
+	$('#introimg').hide();
+	$('#introimg2').hide();
+	setTimeout(function(){ $('#introimg').fadeIn("slow"); }, 1500);
+	setTimeout(function(){ $('#introimg2').show().css('position', 'absolute'); }, 2500);
 }
 
 var main = function(){
-	var gallery = [ "louvre.jpg", "fort.jpg"];
+	var gallery = [ "UIUC.jpg", "union.jpg", "Altgeld.jpg", "eceb.jpeg"];
+	$("#starters").hide();
 	imageRotator(gallery);
-	typewriter();
+	typewriter("Hi there! Welcome Aboard! I'm Simran Patil");
+
+
 }
 
 $(document).ready(main);
