@@ -26,23 +26,18 @@ function imageRotator(array){
 
 function openNav() {
     document.getElementById("Intro").style.height = "100%";
-    $("#ece").hide();
-	$("#code").hide();
-	$(".fa").hide();
     document.getElementById("myImg").style.height = "0%";
     document.getElementById("introimg2").style.height = "0%";
     typewriter("Hello! Nice to see you again!");
 }
 
 function closeNav() {
-	$("#ece").hide();
-	$("#code").hide();
+	$(".content").show();
     document.getElementById("Intro").style.height = "0%";
     document.getElementById("myImg").style.height = "0%";
-    $("#starters").show();
-	$("#ece").slideDown("slow");
-	$("#code").slideDown("slow");
-	$(".fa").show();
+	setTimeout(function(){
+			$('.fly-in').removeClass('hidden');
+	},500);
 }
 
 function typewriter(string){
@@ -69,8 +64,7 @@ var main = function(){
 	$("#starters").hide();
 	imageRotator(gallery);
 	typewriter("Hi there! Welcome Aboard! I'm Simran Patil");
-
-
+	$(".content").hide();
 }
 
 $(document).ready(main);

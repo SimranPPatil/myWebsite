@@ -6,10 +6,7 @@
 <link rel="stylesheet"  href="custom.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
-<script src="https://use.fontawesome.com/d8a19b921b.js"></script>
 <script src="type.js"></script>
-
 </head>
 
 <body>
@@ -30,9 +27,32 @@
 	</div>
   </div>
 </div>
-<section id="sliders">
-	<img id="coverpic" src="night.jpg">
-	<span>
+<!-- after intro screen-->
+<section>
+	<div class="content">
+		<div class="parallax">
+			<ul class="fly-in hidden">
+				<li> W</li>
+				<li> E</li>
+				<li> L</li>
+				<li> C</li>
+				<li> O</li>
+				<li> M</li>
+				<li> E</li>
+			</ul>
+		</div>
+	</div>
 </section>
+<script type="text/javascript">
+	$(function(){
+		$(document).on('scroll', function(){
+			var currY = $(document).scrollTop();
+			console.log('scr' + currY);
+			$('div.parallax').css('background-position', '0' + -currY/3 + 'px' );
+		})
+	})();
+
+
+</script>	
 </body>
 </html>
